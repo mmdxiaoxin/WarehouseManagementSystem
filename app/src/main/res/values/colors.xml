@@ -18,6 +18,7 @@
     <color name="neutral_color_bg2">#F7F8FA</color>
     <color name="neutral_color_division_line">#F5F5F5</color>
     <color name="neutral_color_border">#D9D9D9</color>
+    <color name="neutral_color_sub_border">#E5E5E5</color>
     <color name="neutral_color_prompt_text">#BFBFBF</color>
     <color name="neutral_color_explanatory_text1">#8C8C8C</color>
     <color name="neutral_color_explanatory_text2">#595959</color>
