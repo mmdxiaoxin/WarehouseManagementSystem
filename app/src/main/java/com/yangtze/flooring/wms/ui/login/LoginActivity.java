@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yangtze.flooring.wms.MainActivity;
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.ui.login.LoginViewModel;
 import com.yangtze.flooring.wms.ui.login.LoginViewModelFactory;
@@ -128,6 +130,14 @@ public class LoginActivity extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        // 延迟一段时间后启动新的 Activity
+        new android.os.Handler().postDelayed(
+                () -> {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                },
+                Toast.LENGTH_SHORT
+        );
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
