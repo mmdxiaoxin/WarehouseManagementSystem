@@ -18,6 +18,18 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
+        android:id="@+id/navigation_deposit"
+        android:name="com.yangtze.flooring.wms.ui.deposit.DepositFragment"
+        android:label="@string/title_deposit"
+        tools:layout="@layout/fragment_deposit" />
+
+    <fragment
+        android:id="@+id/navigation_withdraw"
+        android:name="com.yangtze.flooring.wms.ui.withdraw.WithdrawFragment"
+        android:label="@string/title_withdraw"
+        tools:layout="@layout/fragment_withdraw" />
+
+    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.yangtze.flooring.wms.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
