@@ -31,8 +31,8 @@
     <string name="input_verifycode">请输入验证码：</string>
     <string name="get_verifycode">获取验证码</string>
     <string name="confirm">确认</string>
-    <string name="title_deposit">存入模块</string>
-    <string name="title_withdraw">取出模块</string>
+    <string name="title_deposit">存入记录</string>
+    <string name="title_withdraw">取出记录</string>
     <string name="expand_arrow">展开箭头</string>
     <string name="remaining_quantity">剩余数量:</string>
 
