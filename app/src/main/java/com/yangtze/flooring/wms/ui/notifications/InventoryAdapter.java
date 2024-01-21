@@ -14,6 +14,8 @@ import java.util.List;
 public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.ViewHolder> {
 
     private List<InventoryItem> inventoryItems;
+    private OnItemClickListener itemClickListener;
+
 
     public InventoryAdapter(List<InventoryItem> inventoryItems) {
         this.inventoryItems = inventoryItems;
@@ -21,6 +23,10 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
 
     public InventoryAdapter() {
 
+    }
+
+    public void setInventoryItems(List<InventoryItem> inventoryItems) {
+        this.inventoryItems = inventoryItems;
     }
 
     @NonNull
@@ -37,6 +43,16 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         holder.productNameTextView.setText(item.getProductName());
         holder.categoryNameTextView.setText(item.getCategoryName());
         holder.quantityTextView.setText(String.valueOf(item.getQuantity()));
+        // 为 itemView 设置点击监听器
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int clickedPosition = holder.getAdapterPosition();
+                if (itemClickListener != null && clickedPosition != RecyclerView.NO_POSITION) {
+                    itemClickListener.onItemClick(clickedPosition);
+                }
+            }
+        });
     }
 
     @Override
@@ -44,8 +60,8 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.View
         return inventoryItems.size();
     }
 
-    public void setInventoryItems(List<InventoryItem> inventoryItems) {
-        this.inventoryItems = inventoryItems;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.itemClickListener = listener;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

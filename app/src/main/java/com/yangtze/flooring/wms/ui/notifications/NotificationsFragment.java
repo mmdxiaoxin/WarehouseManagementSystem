@@ -2,6 +2,7 @@ package com.yangtze.flooring.wms.ui.notifications;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import com.yangtze.flooring.wms.databinding.FragmentNotificationsBinding;
 
 import java.util.List;
 
-public class NotificationsFragment extends Fragment {
+public class NotificationsFragment extends Fragment implements OnItemClickListener {
 
     private FragmentNotificationsBinding binding;
 
@@ -34,6 +35,10 @@ public class NotificationsFragment extends Fragment {
 
         final InventoryAdapter adapter = new InventoryAdapter();
         recyclerView.setAdapter(adapter);
+
+        // 设置 OnItemClickListener
+        adapter.setOnItemClickListener(this);
+
 
         // Observe the LiveData in ViewModel
         notificationsViewModel.getInventoryItems().observe(getViewLifecycleOwner(), new Observer<List<InventoryItem>>() {
@@ -53,5 +58,12 @@ public class NotificationsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        // 处理选中状态的更新，例如改变背景颜色或其他效果
+        // position 是被点击项的位置
+        Log.d("ItemClicked", "Item clicked at position: " + position);
     }
 }
