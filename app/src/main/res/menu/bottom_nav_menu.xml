@@ -12,16 +12,6 @@
         android:title="@string/title_dashboard" />
 
     <item
-        android:id="@+id/navigation_deposit"
-        android:icon="@drawable/ic_deposit_black_24dp"
-        android:title="@string/title_deposit" />
-
-    <item
-        android:id="@+id/navigation_withdraw"
-        android:icon="@drawable/ic_withdraw_black_24dp"
-        android:title="@string/title_withdraw" />
-
-    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="@string/title_notifications" />
