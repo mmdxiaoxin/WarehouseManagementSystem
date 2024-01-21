@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.databinding.FragmentNotificationsBinding;
+import com.yangtze.flooring.wms.ui.notifications.adapter.DividerItemDecoration;
 import com.yangtze.flooring.wms.ui.notifications.adapter.RecyclerAdapter;
 import com.yangtze.flooring.wms.ui.notifications.model.DataBean;
 
@@ -32,13 +35,18 @@ public class NotificationsFragment extends Fragment {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         NotificationsViewModel notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
-
         mRecyclerView = binding.recyclerView;
 
-        //测试数据
+        //初始化数据
         initData();
 
+        int dividerHeight = getResources().getDimensionPixelSize(R.dimen.divider_height); // 你可以在 res/values/dimens.xml 文件中定义一个维度
+        int dividerColor = ContextCompat.getColor(requireContext(), R.color.neutral_color_division_line);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(requireContext(), dividerHeight, dividerColor);
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        mRecyclerView.addItemDecoration(itemDecoration);
+
         RecyclerAdapter mAdapter = new RecyclerAdapter(requireContext(), dataBeanList);
         mRecyclerView.setAdapter(mAdapter);
 
