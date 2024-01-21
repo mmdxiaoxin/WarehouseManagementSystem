@@ -2,7 +2,6 @@ package com.yangtze.flooring.wms.ui.notifications;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,55 +14,63 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yangtze.flooring.wms.databinding.FragmentNotificationsBinding;
+import com.yangtze.flooring.wms.ui.notifications.adapter.RecyclerAdapter;
+import com.yangtze.flooring.wms.ui.notifications.model.DataBean;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NotificationsFragment extends Fragment implements OnItemClickListener {
+public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
+    private RecyclerView mRecyclerView;
+    private RecyclerAdapter mAdapter;
+    private List<DataBean> dataBeanList;
+    private DataBean dataBean;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
         NotificationsViewModel notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
+        mRecyclerView = binding.recyclerView;
+        loadSampleData();
+        return root;
+    }
 
-        RecyclerView recyclerView = binding.recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    private void loadSampleData() {
+        dataBeanList = new ArrayList<>();
+        for (int i = 1; i <= 50; i++) {
+            dataBean = new DataBean();
+            dataBean.setID(i+"");
+            dataBean.setType(0);
+            dataBean.setParentLeftTxt("父--"+i);
+            dataBean.setParentRightTxt("父内容--"+i);
+            dataBean.setChildLeftTxt("子--"+i);
+            dataBean.setChildRightTxt("子内容--"+i);
+            dataBean.setChildBean(dataBean);
+            dataBeanList.add(dataBean);
+        }
+        setData();
+    }
 
-        final InventoryAdapter adapter = new InventoryAdapter();
-        recyclerView.setAdapter(adapter);
-
-        // 设置 OnItemClickListener
-        adapter.setOnItemClickListener(this);
-
-
-        // Observe the LiveData in ViewModel
-        notificationsViewModel.getInventoryItems().observe(getViewLifecycleOwner(), new Observer<List<InventoryItem>>() {
-            @SuppressLint("NotifyDataSetChanged")
+    private void setData() {
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        mAdapter = new RecyclerAdapter(requireContext(), dataBeanList);
+        mRecyclerView.setAdapter(mAdapter);
+        // Scroll listener
+        mAdapter.setOnScrollListener(new RecyclerAdapter.OnScrollListener() {
             @Override
-            public void onChanged(List<InventoryItem> inventoryItems) {
-                // Update the UI
-                adapter.setInventoryItems(inventoryItems);
-                adapter.notifyDataSetChanged();
+            public void scrollTo(int pos) {
+                mRecyclerView.scrollToPosition(pos);
             }
         });
-
-        return root;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    @Override
-    public void onItemClick(int position) {
-        // 处理选中状态的更新，例如改变背景颜色或其他效果
-        // position 是被点击项的位置
-        Log.d("ItemClicked", "Item clicked at position: " + position);
     }
 }

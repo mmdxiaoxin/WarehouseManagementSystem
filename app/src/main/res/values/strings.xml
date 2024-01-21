@@ -33,5 +33,6 @@
     <string name="confirm">确认</string>
     <string name="title_deposit">存入模块</string>
     <string name="title_withdraw">取出模块</string>
+    <string name="expand_arrow">展开箭头</string>
 
 </resources>
