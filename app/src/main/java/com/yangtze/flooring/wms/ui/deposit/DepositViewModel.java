@@ -27,10 +27,24 @@ public class DepositViewModel extends ViewModel {
 
     private List<DepositRecord> getSampleDepositRecords() {
         List<DepositRecord> depositRecords = new ArrayList<>();
-        // Add sample data
-        depositRecords.add(new DepositRecord(1, "2022-01-01", "Product A", 10, "Sample Remarks 1"));
-        depositRecords.add(new DepositRecord(2, "2022-01-02", "Product B", 15, "Sample Remarks 2"));
-        // Add more items as needed
+
+        // Define the number of records you want to generate
+        int numberOfRecords = 100;
+
+        for (int i = 1; i <= numberOfRecords; i++) {
+            // Generate sample data and add it to the list
+            DepositRecord record = new DepositRecord(
+                    i,
+                    "2022-01-01",
+                    "Product " + i,
+                    i * 5,  // Example: quantity increases with the record number
+                    "Sample Remarks " + i
+            );
+
+            depositRecords.add(record);
+        }
+
         return depositRecords;
     }
+
 }
