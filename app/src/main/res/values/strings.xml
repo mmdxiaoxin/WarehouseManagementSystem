@@ -35,5 +35,12 @@
     <string name="title_withdraw">取出记录</string>
     <string name="expand_arrow">展开箭头</string>
     <string name="remaining_quantity">剩余数量:</string>
+    <string name="item_id">序号</string>
+    <string name="withdraw_date">出库日期</string>
+    <string name="product_name">货物名称</string>
+    <string name="withdraw_quantity">出库数量</string>
+    <string name="product_description">描述</string>
+    <string name="deposit_date">入库日期</string>
+    <string name="deposit_quantity">入库数量</string>
 
 </resources>

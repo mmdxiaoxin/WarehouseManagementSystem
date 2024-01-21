@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="序号"
+        android:text="@string/item_id"
         android:textStyle="bold" />
 
     <View
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="center"
-        android:text="入库日期"
+        android:text="@string/deposit_date"
         android:textStyle="bold" />
 
     <View
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="center"
-        android:text="货物名称"
+        android:text="@string/product_name"
         android:textStyle="bold" />
 
     <View
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="入库数量"
+        android:text="@string/deposit_quantity"
         android:textStyle="bold" />
 
     <View
@@ -63,6 +63,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="3"
         android:gravity="center"
-        android:text="描述"
+        android:text="@string/product_description"
         android:textStyle="bold" />
 </LinearLayout>
