@@ -23,8 +23,9 @@ public class ParentViewHolder extends BaseViewHolder {
     private Context mContext;
     private View view;
     private RelativeLayout containerLayout;
-    private TextView parentLeftView;
-    private TextView parentRightView;
+    private TextView parentLeftNameView;
+    private TextView parentRightCategoryView;
+    private TextView parentRightQuantityView;
     private ImageView expand;
     private View parentDashedView;
 
@@ -35,17 +36,20 @@ public class ParentViewHolder extends BaseViewHolder {
     }
 
     public void bindView(final DataBean dataBean, final int pos, final ItemClickListener listener){
-
+        //初始化控件
         containerLayout = (RelativeLayout) view.findViewById(R.id.container);
-        parentLeftView = (TextView) view.findViewById(R.id.parent_left_text_name);
-        parentRightView = (TextView) view.findViewById(R.id.parent_right_text_category);
+        parentLeftNameView = (TextView) view.findViewById(R.id.parent_left_text_name);
+        parentRightCategoryView = (TextView) view.findViewById(R.id.parent_right_text_category);
+        parentRightQuantityView = (TextView) view.findViewById(R.id.parent_right_text_quantity);
+
         expand = (ImageView) view.findViewById(R.id.expend);
         parentDashedView = view.findViewById(R.id.parent_dashed_view);
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) expand
                 .getLayoutParams();
         expand.setLayoutParams(params);
-        parentLeftView.setText(dataBean.getParentLeftTxt());
-        parentRightView.setText(dataBean.getParentRightTxt());
+        parentLeftNameView.setText(dataBean.getParentLeftTxtName());
+        parentRightCategoryView.setText(dataBean.getParentRightTxtCategory());
+        parentRightQuantityView.setText(dataBean.getParentRightTxtQuantity());
 
         if (dataBean.isExpand()) {
             expand.setRotation(90);

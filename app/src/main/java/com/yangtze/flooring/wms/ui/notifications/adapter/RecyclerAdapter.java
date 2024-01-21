@@ -147,8 +147,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
     private DataBean getChildDataBean(DataBean bean){
         DataBean child = new DataBean();
         child.setType(1);
-        child.setParentLeftTxt(bean.getParentLeftTxt());
-        child.setParentRightTxt(bean.getParentRightTxt());
+        child.setParentLeftTxtName(bean.getParentLeftTxtName());
+        child.setParentRightTxtCategory(bean.getParentRightTxtCategory());
+        child.setParentRightTxtQuantity(bean.getParentRightTxtQuantity());
         child.setChildLeftTxt(bean.getChildLeftTxt());
         child.setChildRightTxt(bean.getChildRightTxt());
         return child;

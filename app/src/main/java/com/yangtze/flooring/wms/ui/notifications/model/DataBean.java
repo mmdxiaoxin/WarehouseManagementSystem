@@ -14,17 +14,18 @@ public class DataBean {
     private DataBean childBean;
 
     private String ID;
-    private String parentLeftTxt;
-    private String parentRightTxt;
+    private String parentLeftTxtName;
+    private String parentRightTxtCategory;
+    private String parentRightTxtQuantity;
     private String childLeftTxt;
     private String childRightTxt;
 
-    public String getParentLeftTxt() {
-        return parentLeftTxt;
+    public String getParentLeftTxtName() {
+        return parentLeftTxtName;
     }
 
-    public void setParentLeftTxt(String parentLeftTxt) {
-        this.parentLeftTxt = parentLeftTxt;
+    public void setParentLeftTxtName(String parentLeftTxtName) {
+        this.parentLeftTxtName = parentLeftTxtName;
     }
 
     public String getChildRightTxt() {
@@ -43,12 +44,20 @@ public class DataBean {
         this.childLeftTxt = childLeftTxt;
     }
 
-    public String getParentRightTxt() {
-        return parentRightTxt;
+    public String getParentRightTxtCategory() {
+        return parentRightTxtCategory;
     }
 
-    public void setParentRightTxt(String parentRightTxt) {
-        this.parentRightTxt = parentRightTxt;
+    public void setParentRightTxtCategory(String parentRightTxtCategory) {
+        this.parentRightTxtCategory = parentRightTxtCategory;
+    }
+
+    public String getParentRightTxtQuantity() {
+        return parentRightTxtQuantity;
+    }
+
+    public void setParentRightTxtQuantity(String parentRightTxtQuantity) {
+        this.parentRightTxtQuantity = parentRightTxtQuantity;
     }
 
     public int getType() {
