@@ -4,16 +4,29 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+import java.util.ArrayList;
+import java.util.List;
 
-    private final MutableLiveData<String> mText;
+public class NotificationsViewModel extends ViewModel {
+    private final MutableLiveData<List<InventoryItem>> inventoryItems;
 
     public NotificationsViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        inventoryItems = new MutableLiveData<>();
+        loadSampleInventoryItems(); // Load sample data
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<List<InventoryItem>> getInventoryItems() {
+        return inventoryItems;
+    }
+
+    private void loadSampleInventoryItems() {
+        // Replace this with your actual data retrieval logic
+        List<InventoryItem> items = new ArrayList<>();
+        items.add(new InventoryItem("Product 1", "辅料", 10));
+        items.add(new InventoryItem("Product 2", "木门", 20));
+        // Add more items as needed
+
+        // Update LiveData with new data
+        inventoryItems.setValue(items);
     }
 }
