@@ -26,7 +26,7 @@ public class DepositFragment extends Fragment {
         depositViewModel = new ViewModelProvider(this).get(DepositViewModel.class);
         View root = inflater.inflate(R.layout.fragment_deposit, container, false);
 
-        recyclerView = root.findViewById(R.id.recyclerView);
+        recyclerView = root.findViewById(R.id.deposit_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         depositAdapter = new DepositAdapter();

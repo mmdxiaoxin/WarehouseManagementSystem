@@ -35,7 +35,7 @@ public class NotificationsFragment extends Fragment {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         NotificationsViewModel notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
-        mRecyclerView = binding.recyclerView;
+        mRecyclerView = binding.notificationsRecyclerView;
 
         //初始化数据
         initData();
