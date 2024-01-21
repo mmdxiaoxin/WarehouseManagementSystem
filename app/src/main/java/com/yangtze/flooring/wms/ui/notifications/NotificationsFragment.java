@@ -39,15 +39,14 @@ public class NotificationsFragment extends Fragment {
 
         //初始化数据
         initData();
+        RecyclerAdapter mAdapter = new RecyclerAdapter(requireContext(), dataBeanList);
 
-        int dividerHeight = getResources().getDimensionPixelSize(R.dimen.divider_height); // 你可以在 res/values/dimens.xml 文件中定义一个维度
+        int dividerHeight = getResources().getDimensionPixelSize(R.dimen.divider_height);
         int dividerColor = ContextCompat.getColor(requireContext(), R.color.neutral_color_division_line);
         DividerItemDecoration itemDecoration = new DividerItemDecoration(requireContext(), dividerHeight, dividerColor);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         mRecyclerView.addItemDecoration(itemDecoration);
-
-        RecyclerAdapter mAdapter = new RecyclerAdapter(requireContext(), dataBeanList);
         mRecyclerView.setAdapter(mAdapter);
 
         // Scroll listener
