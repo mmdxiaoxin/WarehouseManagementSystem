@@ -36,13 +36,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         View view = null;
         switch (viewType){
             case DataBean.PARENT_ITEM:
-                view = mInflater.inflate(R.layout.recycleview_item_parent, parent, false);
+                view = mInflater.inflate(R.layout.notifications_recycleview_item_parent, parent, false);
                 return new ParentViewHolder(context, view);
             case DataBean.CHILD_ITEM:
-                view = mInflater.inflate(R.layout.recycleview_item_child, parent, false);
+                view = mInflater.inflate(R.layout.notifications_recycleview_item_child, parent, false);
                 return new ChildViewHolder(context, view);
             default:
-                view = mInflater.inflate(R.layout.recycleview_item_parent, parent, false);
+                view = mInflater.inflate(R.layout.notifications_recycleview_item_parent, parent, false);
                 return new ParentViewHolder(context, view);
         }
     }
