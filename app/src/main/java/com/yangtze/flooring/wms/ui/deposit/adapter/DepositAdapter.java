@@ -40,7 +40,7 @@ public class DepositAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             return new HeaderViewHolder(view);
         } else {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.item_deposit_record, parent, false);
+                    .inflate(R.layout.item_record, parent, false);
             return new ItemViewHolder(view);
         }
     }
