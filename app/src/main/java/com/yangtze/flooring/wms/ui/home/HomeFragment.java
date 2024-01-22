@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
         ImageButton withdrawManageButton = root.findViewById(R.id.withdraw_manageButton);
         ImageButton depositRecordButton = root.findViewById(R.id.deposit_recordButton);
         ImageButton withdrawRecordButton = root.findViewById(R.id.withdraw_recordButton);
+        ImageButton testButton = root.findViewById(R.id.test_button);
 
         depositManageButton.setOnClickListener(v -> {
             // 点击入库管理按钮时，启动入库管理 Fragment
@@ -49,6 +50,11 @@ public class HomeFragment extends Fragment {
         withdrawRecordButton.setOnClickListener(v -> {
             // 点击出库记录按钮时，启动出库记录 Fragment
             navigateToWithdrawRecordFragment();
+        });
+
+        testButton.setOnClickListener(v -> {
+            // 点击测试按钮时，启动测试
+
         });
 
         return root;
