@@ -41,7 +41,7 @@ public class DataAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, null);
-            holder.tvData = convertView.findViewById(R.id.tv_data1);
+            holder.tvData1 = convertView.findViewById(R.id.tv_data1);
             holder.linContent = convertView.findViewById(R.id.lin_content);
             convertView.setTag(holder);
         } else {
@@ -49,12 +49,21 @@ public class DataAdapter extends BaseAdapter {
         }
 
         // Set data or perform other operations as needed
+        holder.tvData1.setText(mListData.get(position));
+        holder.tvData2.setText(mListData.get(position));
+        holder.tvData3.setText(mListData.get(position));
+        holder.tvData4.setText(mListData.get(position));
+        holder.tvData5.setText(mListData.get(position));
 
         return convertView;
     }
 
     static class ViewHolder {
-        TextView tvData;
+        TextView tvData1;
+        TextView tvData2;
+        TextView tvData3;
+        TextView tvData4;
+        TextView tvData5;
         LinearLayout linContent;
     }
 }
