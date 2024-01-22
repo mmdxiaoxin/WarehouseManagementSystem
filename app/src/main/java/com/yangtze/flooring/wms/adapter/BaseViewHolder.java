@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.ui.notifications.adapter;
+package com.yangtze.flooring.wms.adapter;
 
 
 import android.view.View;

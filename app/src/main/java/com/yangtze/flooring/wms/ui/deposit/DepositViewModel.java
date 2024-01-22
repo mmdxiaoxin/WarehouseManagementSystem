@@ -5,17 +5,17 @@ package com.yangtze.flooring.wms.ui.deposit;
 
 import androidx.lifecycle.ViewModel;
 
-import com.yangtze.flooring.wms.model.DepositRecord;
+import com.yangtze.flooring.wms.model.Record;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DepositViewModel extends ViewModel {
 
-    private List<DepositRecord> generateSampleData() {
-        List<DepositRecord> sampleData = new ArrayList<>();
+    private List<Record> generateSampleData() {
+        List<Record> sampleData = new ArrayList<>();
         for (int i = 1; i <= 20; i++) {
-            DepositRecord record = new DepositRecord(
+            Record record = new Record(
                     (int)(Math.random() * 1000000),
                     "2023-04-02",
                     "货物 " + i,
@@ -27,7 +27,7 @@ public class DepositViewModel extends ViewModel {
         return sampleData;
     }
 
-    public List<DepositRecord> getSampleData() {
+    public List<Record> getSampleData() {
         return generateSampleData();
     }
 }

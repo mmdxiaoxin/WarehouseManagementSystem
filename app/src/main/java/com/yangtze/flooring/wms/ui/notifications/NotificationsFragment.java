@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.databinding.FragmentNotificationsBinding;
-import com.yangtze.flooring.wms.ui.notifications.adapter.DividerItemDecoration;
-import com.yangtze.flooring.wms.ui.notifications.adapter.RecyclerAdapter;
+import com.yangtze.flooring.wms.adapter.DividerItemDecoration;
+import com.yangtze.flooring.wms.adapter.RecyclerAdapter;
 import com.yangtze.flooring.wms.model.DataBean;
 
 import java.util.ArrayList;

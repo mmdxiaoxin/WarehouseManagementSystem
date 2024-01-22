@@ -30,21 +30,21 @@
             android:background="#cccccc"/>
 
         <LinearLayout
-            android:id="@+id/lin_header_content"
+            android:id="@+id/deposit_lin_header_content"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="3"
             android:orientation="vertical">
 
             <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
-                android:id="@+id/header_horizontal"
+                android:id="@+id/deposit_header_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:overScrollMode="never"
                 android:scrollbars="none">
 
                 <LinearLayout
-                    android:id="@+id/lin_year_title"
+                    android:id="@+id/withdraw_lin_year_title"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:orientation="horizontal">
@@ -132,7 +132,7 @@
             android:orientation="horizontal">
 
             <com.yangtze.flooring.wms.components.LockTable.NoscrollListView
-                android:id="@+id/lv_left"
+                android:id="@+id/deposit_lv_left"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -145,21 +145,21 @@
                 android:background="#cccccc"/>
 
             <LinearLayout
-                android:id="@+id/lin_data_content"
+                android:id="@+id/deposit_lin_data_content"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:orientation="vertical">
 
                 <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
-                    android:id="@+id/data_horizontal"
+                    android:id="@+id/deposit_data_horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:overScrollMode="never"
                     android:scrollbars="none">
 
                     <com.yangtze.flooring.wms.components.LockTable.NoscrollListView
-                        android:id="@+id/lv_data"
+                        android:id="@+id/deposit_lv_data"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:overScrollMode="never"

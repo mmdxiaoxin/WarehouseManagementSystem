@@ -1,5 +1,5 @@
 // DataAdapter.java
-package com.yangtze.flooring.wms.ui.deposit.adapter;
+package com.yangtze.flooring.wms.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,15 +9,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yangtze.flooring.wms.R;
-import com.yangtze.flooring.wms.model.DepositRecord;
+import com.yangtze.flooring.wms.model.Record;
 
 import java.util.List;
 
 public class DataAdapter extends BaseAdapter {
 
-    private final List<DepositRecord> mListData;
+    private final List<Record> mListData;
 
-    public DataAdapter(List<DepositRecord> listData) {
+    public DataAdapter(List<Record> listData) {
         this.mListData = listData;
     }
 

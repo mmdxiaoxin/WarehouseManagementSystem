@@ -12,9 +12,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.components.LockTable.NoscrollListView;
 import com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView;
-import com.yangtze.flooring.wms.model.DepositRecord;
-import com.yangtze.flooring.wms.ui.deposit.adapter.DataAdapter;
-import com.yangtze.flooring.wms.ui.deposit.adapter.LeftAdapter;
+import com.yangtze.flooring.wms.model.Record;
+import com.yangtze.flooring.wms.adapter.DataAdapter;
+import com.yangtze.flooring.wms.adapter.LeftAdapter;
 
 import java.util.List;
 
@@ -31,17 +31,17 @@ public class DepositFragment extends Fragment {
     private SyncHorizontalScrollView mHeaderHorizontal;
     private SyncHorizontalScrollView mDataHorizontal;
 
-    private List<DepositRecord> mListData;
+    private List<Record> mListData;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         depositViewModel = new ViewModelProvider(this).get(DepositViewModel.class);
         View root = inflater.inflate(R.layout.fragment_deposit, container, false);
-        mLeft = root.findViewById(R.id.lv_left);
-        mData = root.findViewById(R.id.lv_data);
-        mDataHorizontal = root.findViewById(R.id.data_horizontal);
-        mHeaderHorizontal = root.findViewById(R.id.header_horizontal);
+        mLeft = root.findViewById(R.id.deposit_lv_left);
+        mData = root.findViewById(R.id.deposit_lv_data);
+        mDataHorizontal = root.findViewById(R.id.deposit_data_horizontal);
+        mHeaderHorizontal = root.findViewById(R.id.deposit_header_horizontal);
         mDataHorizontal.setScrollView(mHeaderHorizontal);
         mHeaderHorizontal.setScrollView(mDataHorizontal);
 

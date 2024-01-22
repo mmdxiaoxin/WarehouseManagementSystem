@@ -1,6 +1,6 @@
 package com.yangtze.flooring.wms.model;
 
-public class DepositRecord {
+public class Record {
 
     private int recordId;
     private String entryDate;
@@ -8,7 +8,7 @@ public class DepositRecord {
     private int entryQuantity;
     private String remarks;
 
-    public DepositRecord(int recordId, String entryDate, String productName, int entryQuantity, String remarks) {
+    public Record(int recordId, String entryDate, String productName, int entryQuantity, String remarks) {
         this.recordId = recordId;
         this.entryDate = entryDate;
         this.productName = productName;
