@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.yangtze.flooring.wms.R;
-import com.yangtze.flooring.wms.ui.notifications.model.DataBean;
+import com.yangtze.flooring.wms.model.DataBean;
 
 
 /**

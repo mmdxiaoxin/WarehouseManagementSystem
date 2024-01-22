@@ -4,9 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.yangtze.flooring.wms.ui.notifications.model.DataBean;
+import com.yangtze.flooring.wms.model.DataBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NotificationsViewModel extends ViewModel {

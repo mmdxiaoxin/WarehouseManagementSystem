@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.ui.notifications.model;
+package com.yangtze.flooring.wms.model;
 
 /**
  * 实体类，模拟数据

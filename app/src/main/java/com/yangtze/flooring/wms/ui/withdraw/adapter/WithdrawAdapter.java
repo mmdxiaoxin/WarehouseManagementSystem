@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yangtze.flooring.wms.R;
-import com.yangtze.flooring.wms.ui.withdraw.model.WithdrawRecord;
+import com.yangtze.flooring.wms.model.WithdrawRecord;
 
 import java.util.ArrayList;
 import java.util.List;

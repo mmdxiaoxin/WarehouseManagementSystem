@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.ui.withdraw.model;
+package com.yangtze.flooring.wms.model;
 
 public class WithdrawRecord {
 

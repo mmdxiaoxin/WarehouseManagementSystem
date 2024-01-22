@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yangtze.flooring.wms.R;
-import com.yangtze.flooring.wms.ui.notifications.model.DataBean;
+import com.yangtze.flooring.wms.model.DataBean;
 
 import java.util.List;
 

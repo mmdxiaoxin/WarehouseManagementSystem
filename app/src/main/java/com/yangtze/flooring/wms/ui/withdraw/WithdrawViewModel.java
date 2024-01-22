@@ -4,8 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.yangtze.flooring.wms.ui.deposit.model.DepositRecord;
-import com.yangtze.flooring.wms.ui.withdraw.model.WithdrawRecord;
+import com.yangtze.flooring.wms.model.WithdrawRecord;
 
 import java.util.ArrayList;
 import java.util.List;

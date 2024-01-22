@@ -1,7 +1,7 @@
 package com.yangtze.flooring.wms.ui.notifications.adapter;
 
 
-import com.yangtze.flooring.wms.ui.notifications.model.DataBean;
+import com.yangtze.flooring.wms.model.DataBean;
 
 /**
  * 父布局Item点击监听接口
