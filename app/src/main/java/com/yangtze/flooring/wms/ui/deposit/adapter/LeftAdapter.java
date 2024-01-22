@@ -8,14 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.yangtze.flooring.wms.R;
+import com.yangtze.flooring.wms.model.DepositRecord;
 
 import java.util.List;
 
 public class LeftAdapter extends BaseAdapter {
 
-    private final List<String> mListData;
+    private final List<DepositRecord> mListData;
 
-    public LeftAdapter(List<String> listData) {
+    public LeftAdapter(List<DepositRecord> listData) {
         this.mListData = listData;
     }
 

@@ -54,7 +54,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="第1列数据"/>
+                        android:text="入库单号"/>
 
                     <View
                         android:layout_width="1px"
@@ -66,7 +66,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="第2列数据"/>
+                        android:text="货物名称"/>
 
                     <View
                         android:layout_width="1px"
@@ -78,7 +78,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="第3列数据"/>
+                        android:text="入库时间"/>
 
                     <View
                         android:layout_width="1px"
@@ -90,7 +90,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="第4列数据"/>
+                        android:text="入库数量"/>
 
                     <View
                         android:layout_width="1px"
@@ -102,7 +102,7 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="第5列数据"/>
+                        android:text="备注"/>
 
                     <View
                         android:layout_width="1px"

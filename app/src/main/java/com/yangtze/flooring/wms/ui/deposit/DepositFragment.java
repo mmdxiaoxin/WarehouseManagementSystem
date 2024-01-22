@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.components.LockTable.NoscrollListView;
 import com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView;
+import com.yangtze.flooring.wms.model.DepositRecord;
 import com.yangtze.flooring.wms.ui.deposit.adapter.DataAdapter;
 import com.yangtze.flooring.wms.ui.deposit.adapter.LeftAdapter;
 
@@ -30,7 +31,7 @@ public class DepositFragment extends Fragment {
     private SyncHorizontalScrollView mHeaderHorizontal;
     private SyncHorizontalScrollView mDataHorizontal;
 
-    private List<String> mListData;
+    private List<DepositRecord> mListData;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,

@@ -8,15 +8,16 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.List;
-
 import com.yangtze.flooring.wms.R;
+import com.yangtze.flooring.wms.model.DepositRecord;
+
+import java.util.List;
 
 public class DataAdapter extends BaseAdapter {
 
-    private final List<String> mListData;
+    private final List<DepositRecord> mListData;
 
-    public DataAdapter(List<String> listData) {
+    public DataAdapter(List<DepositRecord> listData) {
         this.mListData = listData;
     }
 
@@ -53,11 +54,11 @@ public class DataAdapter extends BaseAdapter {
         }
 
         // Set data or perform other operations as needed
-        holder.tvData1.setText(mListData.get(position));
-        holder.tvData2.setText(mListData.get(position));
-        holder.tvData3.setText(mListData.get(position));
-        holder.tvData4.setText(mListData.get(position));
-        holder.tvData5.setText(mListData.get(position));
+        holder.tvData1.setText(String.valueOf(mListData.get(position).getRecordId()));
+        holder.tvData2.setText(mListData.get(position).getProductName());
+        holder.tvData3.setText(mListData.get(position).getEntryDate());
+        holder.tvData4.setText(String.valueOf(mListData.get(position).getEntryQuantity()));
+        holder.tvData5.setText(mListData.get(position).getRemarks());
 
         return convertView;
     }
