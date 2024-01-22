@@ -12,11 +12,11 @@ import com.yangtze.flooring.wms.model.Record;
 
 import java.util.List;
 
-public class LeftAdapter extends BaseAdapter {
+public class RecordDataLeftAdapter extends BaseAdapter {
 
     private final List<Record> mListData;
 
-    public LeftAdapter(List<Record> listData) {
+    public RecordDataLeftAdapter(List<Record> listData) {
         this.mListData = listData;
     }
 

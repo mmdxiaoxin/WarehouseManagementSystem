@@ -13,8 +13,8 @@ import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.components.LockTable.NoscrollListView;
 import com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView;
 import com.yangtze.flooring.wms.model.Record;
-import com.yangtze.flooring.wms.adapter.DataAdapter;
-import com.yangtze.flooring.wms.adapter.LeftAdapter;
+import com.yangtze.flooring.wms.adapter.RecordDataAdapter;
+import com.yangtze.flooring.wms.adapter.RecordDataLeftAdapter;
 
 import java.util.List;
 
@@ -22,10 +22,10 @@ public class WithdrawFragment extends Fragment {
 
     private WithdrawViewModel withdrawViewModel;
     private NoscrollListView mLeft;
-    private LeftAdapter mLeftAdapter;
+    private RecordDataLeftAdapter mRecordDataLeftAdapter;
 
     private NoscrollListView mData;
-    private DataAdapter mDataAdapter;
+    private RecordDataAdapter mRecordDataAdapter;
 
     private SyncHorizontalScrollView mHeaderHorizontal;
     private SyncHorizontalScrollView mDataHorizontal;
@@ -49,11 +49,11 @@ public class WithdrawFragment extends Fragment {
     private void initView() {
         mListData = withdrawViewModel.getSampleData();
 
-        mLeftAdapter = new LeftAdapter(mListData);
-        mLeft.setAdapter(mLeftAdapter);
+        mRecordDataLeftAdapter = new RecordDataLeftAdapter(mListData);
+        mLeft.setAdapter(mRecordDataLeftAdapter);
 
-        mDataAdapter = new DataAdapter(mListData);
-        mData.setAdapter(mDataAdapter);
+        mRecordDataAdapter = new RecordDataAdapter(mListData);
+        mData.setAdapter(mRecordDataAdapter);
     }
 
 }
