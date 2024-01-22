@@ -10,7 +10,7 @@ public class DepositViewModel extends ViewModel {
 
     private List<String> generateSampleData() {
         List<String> sampleData = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 20; i++) {
             sampleData.add("Row " + i);
         }
         return sampleData;

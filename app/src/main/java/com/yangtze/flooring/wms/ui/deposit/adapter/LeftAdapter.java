@@ -1,5 +1,5 @@
 // LeftAdapter.java
-package com.yangtze.flooring.wms.components.LockTable.adapter;
+package com.yangtze.flooring.wms.ui.deposit.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

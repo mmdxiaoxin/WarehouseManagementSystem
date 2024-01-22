@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.components.LockTable.NoscrollListView;
 import com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView;
-import com.yangtze.flooring.wms.components.LockTable.adapter.DataAdapter;
-import com.yangtze.flooring.wms.components.LockTable.adapter.LeftAdapter;
+import com.yangtze.flooring.wms.ui.deposit.adapter.DataAdapter;
+import com.yangtze.flooring.wms.ui.deposit.adapter.LeftAdapter;
 
 import java.util.List;
 
