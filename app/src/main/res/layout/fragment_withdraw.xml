@@ -37,7 +37,7 @@
             android:orientation="vertical">
 
             <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
-                android:id="@+id/deposit_header_horizontal"
+                android:id="@+id/withdraw_header_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:overScrollMode="never"

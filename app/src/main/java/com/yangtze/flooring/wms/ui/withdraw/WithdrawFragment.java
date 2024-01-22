@@ -39,7 +39,7 @@ public class WithdrawFragment extends Fragment {
         mLeft = root.findViewById(R.id.withdraw_lv_left);
         mData = root.findViewById(R.id.withdraw_lv_data);
         mDataHorizontal = root.findViewById(R.id.withdraw_data_horizontal);
-        mHeaderHorizontal = root.findViewById(R.id.deposit_header_horizontal);
+        mHeaderHorizontal = root.findViewById(R.id.withdraw_header_horizontal);
         mDataHorizontal.setScrollView(mHeaderHorizontal);
         mHeaderHorizontal.setScrollView(mDataHorizontal);
         initView();
