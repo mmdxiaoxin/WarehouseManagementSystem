@@ -42,6 +42,10 @@ public class DataAdapter extends BaseAdapter {
             holder = new ViewHolder();
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, null);
             holder.tvData1 = convertView.findViewById(R.id.tv_data1);
+            holder.tvData2 = convertView.findViewById(R.id.tv_data2);
+            holder.tvData3 = convertView.findViewById(R.id.tv_data3);
+            holder.tvData4 = convertView.findViewById(R.id.tv_data4);
+            holder.tvData5 = convertView.findViewById(R.id.tv_data5);
             holder.linContent = convertView.findViewById(R.id.lin_content);
             convertView.setTag(holder);
         } else {
