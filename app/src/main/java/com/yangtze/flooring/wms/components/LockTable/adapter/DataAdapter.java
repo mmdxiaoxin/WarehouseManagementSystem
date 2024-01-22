@@ -1,21 +1,22 @@
-// LeftAdapter.java
-package com.yangtze.flooring.wms.ui.deposit.adapter;
+// DataAdapter.java
+package com.yangtze.flooring.wms.components.LockTable.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.yangtze.flooring.wms.R;
 
 import java.util.List;
 
-public class LeftAdapter extends BaseAdapter {
+import com.yangtze.flooring.wms.R;
 
-    private List<String> mListData;
+public class DataAdapter extends BaseAdapter {
 
-    public LeftAdapter(List<String> listData) {
+    private final List<String> mListData;
+
+    public DataAdapter(List<String> listData) {
         this.mListData = listData;
     }
 
@@ -39,19 +40,21 @@ public class LeftAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_left, null);
-            holder.tvLeft = convertView.findViewById(R.id.tv_left);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_data, null);
+            holder.tvData = convertView.findViewById(R.id.tv_data1);
+            holder.linContent = convertView.findViewById(R.id.lin_content);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.tvLeft.setText("第" + position + "行");
+        // Set data or perform other operations as needed
 
         return convertView;
     }
 
     static class ViewHolder {
-        TextView tvLeft;
+        TextView tvData;
+        LinearLayout linContent;
     }
 }

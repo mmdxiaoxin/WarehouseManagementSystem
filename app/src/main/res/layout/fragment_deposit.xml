@@ -14,7 +14,14 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="序号"/>
+        </LinearLayout>
 
         <View
             android:layout_width="1px"
@@ -28,7 +35,7 @@
             android:layout_weight="3"
             android:orientation="vertical">
 
-            <com.yangtze.flooring.wms.components.SyncHorizontalScrollView
+            <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
                 android:id="@+id/header_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -102,7 +109,7 @@
                         android:layout_height="50dp"
                         android:background="#cccccc"/>
                 </LinearLayout>
-            </com.yangtze.flooring.wms.components.SyncHorizontalScrollView>
+            </com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView>
         </LinearLayout>
     </LinearLayout>
 
@@ -124,7 +131,7 @@
             android:layout_alignParentTop="true"
             android:orientation="horizontal">
 
-            <com.yangtze.flooring.wms.components.NoscrollListView
+            <com.yangtze.flooring.wms.components.LockTable.NoscrollListView
                 android:id="@+id/lv_left"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -144,20 +151,20 @@
                 android:layout_weight="3"
                 android:orientation="vertical">
 
-                <com.yangtze.flooring.wms.components.SyncHorizontalScrollView
+                <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
                     android:id="@+id/data_horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:overScrollMode="never"
                     android:scrollbars="none">
 
-                    <com.yangtze.flooring.wms.components.NoscrollListView
+                    <com.yangtze.flooring.wms.components.LockTable.NoscrollListView
                         android:id="@+id/lv_data"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:overScrollMode="never"
                         android:scrollbars="none"/>
-                </com.yangtze.flooring.wms.components.SyncHorizontalScrollView>
+                </com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

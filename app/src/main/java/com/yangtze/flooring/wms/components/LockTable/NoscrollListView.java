@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.components;
+package com.yangtze.flooring.wms.components.LockTable;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -8,15 +8,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.yangtze.flooring.wms.R;
-import com.yangtze.flooring.wms.components.NoscrollListView;
-import com.yangtze.flooring.wms.components.SyncHorizontalScrollView;
-import com.yangtze.flooring.wms.ui.deposit.adapter.DataAdapter;
-import com.yangtze.flooring.wms.ui.deposit.adapter.LeftAdapter;
+import com.yangtze.flooring.wms.components.LockTable.NoscrollListView;
+import com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView;
+import com.yangtze.flooring.wms.components.LockTable.adapter.DataAdapter;
+import com.yangtze.flooring.wms.components.LockTable.adapter.LeftAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
