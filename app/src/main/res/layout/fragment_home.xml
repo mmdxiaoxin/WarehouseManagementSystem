@@ -43,7 +43,7 @@
                     android:layout_height="64dp"
                     android:layout_margin="8dp"
                     android:contentDescription="@string/deposit_manage"
-                    android:src="@android:drawable/ic_input_get" />
+                    android:src="@android:drawable/ic_menu_slideshow" />
 
                 <TextView
                     android:layout_width="wrap_content"

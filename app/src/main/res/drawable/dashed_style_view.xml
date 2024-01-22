@@ -6,6 +6,6 @@
         android:dashGap="3dp"
         android:dashWidth="10dp"
         android:width="1dp"
-        android:color="@color/neutral_color_division_line">
+        android:color="@color/neutral_color_border">
     </stroke>
 </shape>
