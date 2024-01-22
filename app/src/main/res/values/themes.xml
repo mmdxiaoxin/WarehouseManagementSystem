@@ -29,4 +29,13 @@
         <item name="android:dividerHorizontal">@color/neutral_color_division_line</item>
 
     </style>
+
+    <style name="Theme.WarehouseManagementSystem.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.WarehouseManagementSystem.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.WarehouseManagementSystem.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

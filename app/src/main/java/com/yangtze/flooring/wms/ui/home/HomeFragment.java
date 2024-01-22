@@ -1,11 +1,15 @@
 package com.yangtze.flooring.wms.ui.home;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -13,6 +17,8 @@ import androidx.navigation.Navigation;
 
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.databinding.FragmentHomeBinding;
+import com.yangtze.flooring.wms.ui.DepositManageActivity;
+import com.yangtze.flooring.wms.ui.WithdrawManageActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -61,23 +67,16 @@ public class HomeFragment extends Fragment {
     }
 
     private void navigateToDepositManageFragment() {
-        // 启动入库管理 Fragment 的逻辑
-        // 使用 FragmentTransaction 替换当前的 Fragment 为入库管理 Fragment
-        // 例如：
-        // FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        // transaction.replace(R.id.fragment_container, new DepositManageFragment());
-        // transaction.addToBackStack(null);
-        // transaction.commit();
+        // 使用 Intent 启动 DepositManageActivity
+        Intent intent = new Intent(getActivity(), DepositManageActivity.class);
+        manageLauncher.launch(intent);
     }
 
+
     private void navigateToWithdrawManageFragment() {
-        // 启动出库管理 Fragment 的逻辑
-        // 使用 FragmentTransaction 替换当前的 Fragment 为出库管理 Fragment
-        // 例如：
-        // FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        // transaction.replace(R.id.fragment_container, new WithdrawManageFragment());
-        // transaction.addToBackStack(null);
-        // transaction.commit();
+        // 使用 Intent 启动 WithdrawManageActivity
+        Intent intent = new Intent(getActivity(), WithdrawManageActivity.class);
+        manageLauncher.launch(intent);
     }
 
     private void navigateToDepositRecordFragment() {
@@ -87,6 +86,18 @@ public class HomeFragment extends Fragment {
     private void navigateToWithdrawRecordFragment() {
         Navigation.findNavController(binding.getRoot()).navigate(R.id.navigation_withdraw);
     }
+
+    private final ActivityResultLauncher<Intent> manageLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    // 处理来自 ScrollingActivity 的响应
+                    Intent data = result.getData();
+                    // 你可以从 data 中获取额外的信息，如果 ScrollingActivity 设置了响应数据
+                }
+            }
+    );
+
 
     @Override
     public void onDestroyView() {
