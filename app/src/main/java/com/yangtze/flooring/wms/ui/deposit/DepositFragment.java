@@ -37,6 +37,8 @@ public class DepositFragment extends Fragment {
     private List<String> rightMoveDatas = new ArrayList<>();
     private List<String> topTabs = new ArrayList<>();
 
+    private ContentAdapter contentAdapter;
+    private boolean isLoading = false;
 
     @SuppressLint("MissingInflatedId")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -63,7 +65,7 @@ public class DepositFragment extends Fragment {
         //处理内容部分
         recyclerContent.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerContent.setHasFixedSize(true);
-        final ContentAdapter contentAdapter = new ContentAdapter(requireContext(),rvTabRight);
+        contentAdapter = new ContentAdapter(requireContext(),rvTabRight);
         recyclerContent.setAdapter(contentAdapter);
 
         recyclerContent.postDelayed(new Runnable() {
@@ -109,6 +111,75 @@ public class DepositFragment extends Fragment {
             }
         });
 
+        //上拉加载
+        recyclerContent.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                // 在这里添加判断是否滑动到底部的逻辑
+                LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                int lastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+                int totalItemCount = layoutManager.getItemCount();
+                if (lastVisibleItemPosition == totalItemCount - 1) {
+                    // 滑动到底部，执行上拉加载操作
+                    loadMoreData();
+                }
+            }
+        });
+
         return root;
+    }
+
+    private void loadMoreData() {
+        if (!isLoading) {
+            isLoading = true;
+
+            // 显示加载中的样式
+            showLoadingIndicator();
+
+            // 模拟延迟加载
+            new android.os.Handler().postDelayed(
+                    new Runnable() {
+                        public void run() {
+                            // 在这里执行加载更多数据的逻辑
+                            // 例如，加载更多数据到 mEntities 中
+                            for (int i = 0; i < 20; i++) {
+                                Entity entity = new Entity();
+                                entity.setLeftTitle("新数据" + i);
+                                rightMoveDatas.clear();
+                                for (int j = 0; j < 50; j++) {
+                                    rightMoveDatas.add("年份" + j);
+                                }
+                                entity.setRightDatas(rightMoveDatas);
+                                mEntities.add(entity);
+                            }
+
+                            // 隐藏加载中的样式
+                            hideLoadingIndicator();
+
+                            // 更新适配器
+                            contentAdapter.notifyDataSetChanged();
+
+                            // 设置isLoading为false，表示加载完成
+                            isLoading = false;
+                        }
+                    },
+                    1500 // 模拟延迟1.5秒
+            );
+        }
+    }
+
+    private void showLoadingIndicator() {
+        // 在这里显示加载中的样式，可以是一个ProgressBar或其他加载动画
+        // 例如，你可以在布局中添加一个ProgressBar，然后在这里设置它可见
+        // progressBar.setVisibility(View.VISIBLE);
+        Toast.makeText(requireContext(), "正在加载中...", Toast.LENGTH_SHORT).show();
+    }
+
+    private void hideLoadingIndicator() {
+        // 在这里隐藏加载中的样式，可以是一个ProgressBar或其他加载动画
+        // 例如，你可以在布局中添加一个ProgressBar，然后在这里设置它不可见
+        // progressBar.setVisibility(View.GONE);
+        Toast.makeText(requireContext(), "加载完成", Toast.LENGTH_SHORT).show();
     }
 }
