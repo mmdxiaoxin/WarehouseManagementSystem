@@ -9,12 +9,12 @@ import android.view.View;
 import androidx.annotation.ColorInt;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class DividerItemDecoration extends RecyclerView.ItemDecoration {
+public class NotificationDividerItemDecoration extends RecyclerView.ItemDecoration {
 
     private final int dividerHeight;
     private final Paint paint;
 
-    public DividerItemDecoration(Context context, int dividerHeight, @ColorInt int dividerColor) {
+    public NotificationDividerItemDecoration(Context context, int dividerHeight, @ColorInt int dividerColor) {
         this.dividerHeight = dividerHeight;
         paint = new Paint();
         paint.setColor(dividerColor);
