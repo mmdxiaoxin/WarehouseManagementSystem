@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.databinding.FragmentNotificationsBinding;
 import com.yangtze.flooring.wms.adapter.NotificationDividerItemDecoration;
-import com.yangtze.flooring.wms.adapter.RecyclerAdapter;
+import com.yangtze.flooring.wms.adapter.NotificationRecyclerAdapter;
 import com.yangtze.flooring.wms.model.DataBean;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class NotificationsFragment extends Fragment {
 
         //初始化数据
         initData();
-        RecyclerAdapter mAdapter = new RecyclerAdapter(requireContext(), dataBeanList);
+        NotificationRecyclerAdapter mAdapter = new NotificationRecyclerAdapter(requireContext(), dataBeanList);
 
         int dividerHeight = getResources().getDimensionPixelSize(R.dimen.divider_height);
         int dividerColor = ContextCompat.getColor(requireContext(), R.color.neutral_color_division_line);

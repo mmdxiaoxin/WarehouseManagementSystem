@@ -18,14 +18,14 @@ import java.util.List;
  * 适配器
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
+public class NotificationRecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     private Context context;
     private List<DataBean> dataBeanList;
     private LayoutInflater mInflater;
     private OnScrollListener mOnScrollListener;
 
-    public RecyclerAdapter(Context context, List<DataBean> dataBeanList) {
+    public NotificationRecyclerAdapter(Context context, List<DataBean> dataBeanList) {
         this.context = context;
         this.dataBeanList = dataBeanList;
         this.mInflater = LayoutInflater.from(context);
