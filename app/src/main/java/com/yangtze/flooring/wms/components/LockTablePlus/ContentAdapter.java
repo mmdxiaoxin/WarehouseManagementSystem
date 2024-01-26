@@ -21,7 +21,7 @@ import java.util.List;
 public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemViewHolder> {
 
     private Context context;
-    private List<Entity> datas;
+    private List<Entity> data;
     private HashSet<RecyclerView> observerList = new HashSet<>();
     private int firstPos = -1;
     private int firstOffset = -1;
@@ -32,8 +32,8 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
         initRecyclerView(headRecycler);
     }
 
-    public void setDatas(List<Entity> datas) {
-        this.datas = datas;
+    public void setData(List<Entity> data) {
+        this.data = data;
         notifyDataSetChanged();
     }
 
@@ -47,14 +47,14 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
 
     @Override
     public void onBindViewHolder(@NonNull final ItemViewHolder itemViewHolder, int i) {
-        itemViewHolder.tvLeftTitle.setText(datas.get(i).getLeftTitle());
+        itemViewHolder.tvLeftTitle.setText(data.get(i).getLeftTitle());
         //右边滑动部分
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         itemViewHolder.rvItemRight.setLayoutManager(linearLayoutManager);
         itemViewHolder.rvItemRight.setHasFixedSize(true);
         RightScrollAdapter rightScrollAdapter = new RightScrollAdapter(context);
-        rightScrollAdapter.setDatas(datas.get(i).getRightDatas());
+        rightScrollAdapter.setDatas(data.get(i).getRightDatas());
         itemViewHolder.rvItemRight.setAdapter(rightScrollAdapter);
 
         //设置多条recyclerview联动
@@ -63,10 +63,10 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
 
     @Override
     public int getItemCount() {
-        return null == datas ? 0 : datas.size();
+        return null == data ? 0 : data.size();
     }
 
-    class ItemViewHolder extends RecyclerView.ViewHolder {
+    static class ItemViewHolder extends RecyclerView.ViewHolder {
         TextView tvLeftTitle;
         RecyclerView rvItemRight;
 
@@ -77,11 +77,11 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
         }
     }
 
-    //多条recycleview联动
+    //多条recyclerview联动
     @SuppressLint("ClickableViewAccessibility")
     public void initRecyclerView(RecyclerView recyclerView) {
         recyclerView.setHasFixedSize(true);
-        //为每一个recycleview创建layoutManager
+        //为每一个recyclerview创建layoutManager
         LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
         //todo
         // 通过移动layoutManager来实现列表滑动  此行是让新加载的item条目保持跟已经滑动的recycleview位置保持一致
@@ -117,14 +117,14 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
                 if (firstVisibleItem != null) {
                     //获取第一个item的偏移量
                     int firstRight = linearLayoutManager.getDecoratedRight(firstVisibleItem);
-                    //遍历其它的所有的recycleview条目
+                    //遍历其它的所有的recyclerview条目
                     for (RecyclerView rv : observerList) {
                         if (recyclerView != rv) {
                             LinearLayoutManager layoutManager = (LinearLayoutManager) rv.getLayoutManager();
                             if (layoutManager != null) {
                                 firstPos = firstPos1;
                                 firstOffset = firstRight;
-                                //通过当前显示item的位置和偏移量的位置来置顶recycleview 也就是同步其它item的移动距离
+                                //通过当前显示item的位置和偏移量的位置来置顶recyclerview 也就是同步其它item的移动距离
                                 layoutManager.scrollToPositionWithOffset(firstPos + 1, firstRight);
                             }
                         }

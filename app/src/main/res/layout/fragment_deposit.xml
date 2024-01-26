@@ -17,7 +17,7 @@
             android:id="@+id/tv_left_title"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:gravity="left|center_vertical"
+            android:gravity="start|center_vertical"
             android:maxLines="1"
             android:paddingStart="15dp"
             android:text="序号"
@@ -34,8 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never"
-            android:scrollbars="none">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:scrollbars="none" />
     </LinearLayout>
 
     <View
@@ -52,8 +51,6 @@
             android:id="@+id/recycler_content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_weight="1" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

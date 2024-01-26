@@ -79,7 +79,7 @@ public class DepositFragment extends Fragment {
                     entity.setRightDatas(rightMoveDatas);
                     mEntities.add(entity);
                 }
-                contentAdapter.setDatas(mEntities);
+                contentAdapter.setData(mEntities);
                 Toast.makeText(requireContext(), "加载完毕,加载了30条数据", Toast.LENGTH_SHORT).show();
             }
         }, 1500);
@@ -101,7 +101,7 @@ public class DepositFragment extends Fragment {
                             entity.setRightDatas(rightMoveDatas);
                             mEntities.add(entity);
                         }
-                        contentAdapter.setDatas(mEntities);
+                        contentAdapter.setData(mEntities);
                         swipeRefresh.setRefreshing(false);
                         Toast.makeText(requireContext(), "刷新完毕,刷新了50条数据", Toast.LENGTH_SHORT).show();
                     }
