@@ -7,165 +7,53 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/ll_top_root"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="visible">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="序号"/>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_left_title"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:maxLines="1"
+            android:paddingStart="15dp"
+            android:text="序号"
+            android:textColor="#000000"
+            android:textSize="15sp" />
 
         <View
             android:layout_width="1px"
             android:layout_height="50dp"
-            android:background="#cccccc"/>
+            android:background="#cccccc" />
 
-        <LinearLayout
-            android:id="@+id/deposit_lin_header_content"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="3"
-            android:orientation="vertical">
-
-            <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
-                android:id="@+id/deposit_header_horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:overScrollMode="never"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:id="@+id/withdraw_lin_year_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="入库单号"/>
-
-                    <View
-                        android:layout_width="1px"
-                        android:layout_height="50dp"
-                        android:background="#cccccc"/>
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="货物名称"/>
-
-                    <View
-                        android:layout_width="1px"
-                        android:layout_height="50dp"
-                        android:background="#cccccc"/>
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="入库时间"/>
-
-                    <View
-                        android:layout_width="1px"
-                        android:layout_height="50dp"
-                        android:background="#cccccc"/>
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="入库数量"/>
-
-                    <View
-                        android:layout_width="1px"
-                        android:layout_height="50dp"
-                        android:background="#cccccc"/>
-
-                    <TextView
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:gravity="center"
-                        android:text="备注"/>
-
-                    <View
-                        android:layout_width="1px"
-                        android:layout_height="50dp"
-                        android:background="#cccccc"/>
-                </LinearLayout>
-            </com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView>
-        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tab_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#cccccc"/>
+        android:background="#cccccc" />
 
-    <ScrollView
-        android:id="@+id/scroll_content"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="none">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <com.yangtze.flooring.wms.components.LockTable.NoscrollListView
-                android:id="@+id/deposit_lv_left"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:overScrollMode="never"
-                android:scrollbars="none"/>
-
-            <View
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:background="#cccccc"/>
-
-            <LinearLayout
-                android:id="@+id/deposit_lin_data_content"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:orientation="vertical">
-
-                <com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView
-                    android:id="@+id/deposit_data_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:overScrollMode="never"
-                    android:scrollbars="none">
-
-                    <com.yangtze.flooring.wms.components.LockTable.NoscrollListView
-                        android:id="@+id/deposit_lv_data"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:overScrollMode="never"
-                        android:scrollbars="none"/>
-                </com.yangtze.flooring.wms.components.LockTable.SyncHorizontalScrollView>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
