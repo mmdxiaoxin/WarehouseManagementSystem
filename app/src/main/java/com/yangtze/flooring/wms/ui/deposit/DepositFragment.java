@@ -34,7 +34,6 @@ public class DepositFragment extends Fragment {
     private RecyclerView recyclerContent;
     private SwipeRefreshLayout swipeRefresh;
     private final List<Entity> mEntities = new ArrayList<>();
-    private final List<String> rightMoveDatas = new ArrayList<>();
     private final List<String> topTabs = new ArrayList<>();
 
     private RecordsContentAdapter recordsContentAdapter;
@@ -58,15 +57,19 @@ public class DepositFragment extends Fragment {
         rvTabRight.setLayoutManager(linearLayoutManager);
         RecordsTopTabAdapter recordsTopTabAdapter = new RecordsTopTabAdapter(requireContext());
         rvTabRight.setAdapter(recordsTopTabAdapter);
-        for (int i = 0; i < 50; i++) {
-            topTabs.add("类型" + i);
-        }
+
+        topTabs.add("入库单号");
+        topTabs.add("货物名称");
+        topTabs.add("入库日期");
+        topTabs.add("入库数量");
+        topTabs.add("备注");
+
         recordsTopTabAdapter.setDatas(topTabs);
 
         //处理内容部分
         recyclerContent.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerContent.setHasFixedSize(true);
-        recordsContentAdapter = new RecordsContentAdapter(requireContext(),rvTabRight);
+        recordsContentAdapter = new RecordsContentAdapter(requireContext(), rvTabRight);
         recyclerContent.setAdapter(recordsContentAdapter);
 
         recyclerContent.postDelayed(new Runnable() {
@@ -74,12 +77,17 @@ public class DepositFragment extends Fragment {
             public void run() {
                 for (int i = 0; i < 30; i++) {
                     Entity entity = new Entity();
-                    entity.setLeftTitle("贵州茅台" + i);
-                    rightMoveDatas.clear();
-                    for (int j = 0; j < 50; j++) {
-                        rightMoveDatas.add("年份" + j);
-                    }
-                    entity.setRightDatas(rightMoveDatas);
+                    entity.setLeftTitle(String.valueOf(i));
+
+                    List<String> rightMoveData = new ArrayList<>();
+
+                    rightMoveData.add(String.valueOf((int) (Math.random() * 100000)));
+                    rightMoveData.add("货物名称" + i);
+                    rightMoveData.add("2023-04-02");
+                    rightMoveData.add(String.valueOf((int) (Math.random() * 100)));
+                    rightMoveData.add("备注" + i);
+
+                    entity.setRightDatas(rightMoveData);
                     mEntities.add(entity);
                 }
                 recordsContentAdapter.setData(mEntities);
@@ -96,12 +104,16 @@ public class DepositFragment extends Fragment {
                     public void run() {
                         for (int i = 0; i < 50; i++) {
                             Entity entity = new Entity();
-                            entity.setLeftTitle("贵州茅台" + i);
-                            rightMoveDatas.clear();
-                            for (int j = 0; j < 50; j++) {
-                                rightMoveDatas.add("年份" + j);
-                            }
-                            entity.setRightDatas(rightMoveDatas);
+                            entity.setLeftTitle("刷新数据" + i);
+                            List<String> rightMoveData = new ArrayList<>();
+
+                            rightMoveData.add(String.valueOf((int) (Math.random() * 100000)));
+                            rightMoveData.add("货物名称" + i);
+                            rightMoveData.add("2023-04-02");
+                            rightMoveData.add(String.valueOf((int) (Math.random() * 100)));
+                            rightMoveData.add("备注" + i);
+
+                            entity.setRightDatas(rightMoveData);
                             mEntities.add(entity);
                         }
                         recordsContentAdapter.setData(mEntities);
@@ -147,11 +159,13 @@ public class DepositFragment extends Fragment {
                             for (int i = 0; i < 20; i++) {
                                 Entity entity = new Entity();
                                 entity.setLeftTitle("新数据" + i);
-                                rightMoveDatas.clear();
-                                for (int j = 0; j < 50; j++) {
-                                    rightMoveDatas.add("年份" + j);
-                                }
-                                entity.setRightDatas(rightMoveDatas);
+                                List<String> rightMoveData = new ArrayList<>();
+                                rightMoveData.add(String.valueOf((int) (Math.random() * 100000)));
+                                rightMoveData.add("货物名称" + i);
+                                rightMoveData.add("2023-04-02");
+                                rightMoveData.add(String.valueOf((int) (Math.random() * 100)));
+                                rightMoveData.add("备注" + i);
+                                entity.setRightDatas(rightMoveData);
                                 mEntities.add(entity);
                             }
 
