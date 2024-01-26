@@ -26,7 +26,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
     private int firstPos = -1;
     private int firstOffset = -1;
 
-    public ContentAdapter(Context context,RecyclerView headRecycler) {
+    public ContentAdapter(Context context, RecyclerView headRecycler) {
         this.context = context;
         //设置头部recycle
         initRecyclerView(headRecycler);

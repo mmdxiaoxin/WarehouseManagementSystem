@@ -9,5 +9,7 @@
         android:id="@+id/tv_right_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textColor="#000000" />
+        android:textColor="@color/neutral_color_explanatory_text1"
+        android:background="@drawable/records_item_border"
+        android:text="数据项"/>
 </LinearLayout>

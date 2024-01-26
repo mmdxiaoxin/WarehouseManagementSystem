@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/ll_top_root"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="64dp"
         android:orientation="horizontal"
         android:visibility="visible">
 
@@ -26,7 +26,7 @@
 
         <View
             android:layout_width="1px"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:background="#cccccc" />
 
         <androidx.recyclerview.widget.RecyclerView

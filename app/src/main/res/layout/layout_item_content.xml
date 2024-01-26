@@ -9,14 +9,20 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:gravity="center_vertical|start"
             android:id="@+id/tv_left_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_vertical|start"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
             android:text="股票代码"
-            android:paddingLeft="15dp"
-            android:textColor="#000000" />
+            android:textColor="@color/neutral_color_explanatory_text2" />
     </LinearLayout>
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:background="#cccccc" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_item_right"
