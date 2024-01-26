@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.adapter;
+package com.yangtze.flooring.wms.ui.notifications.adapter;
 
 import android.content.Context;
 import android.graphics.Canvas;

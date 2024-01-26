@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.components.LockTablePlus;
+package com.yangtze.flooring.wms.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,13 +18,13 @@ import java.util.List;
 /**
  * 底部右边列表
  */
-public class RightScrollAdapter extends RecyclerView.Adapter<RightScrollAdapter.ScrollViewHolder> {
+public class RecordsRightScrollAdapter extends RecyclerView.Adapter<RecordsRightScrollAdapter.ScrollViewHolder> {
 
 
     private Context context;
     private List<String> rightDatas;
 
-    public RightScrollAdapter(Context context) {
+    public RecordsRightScrollAdapter(Context context) {
         this.context = context;
     }
 

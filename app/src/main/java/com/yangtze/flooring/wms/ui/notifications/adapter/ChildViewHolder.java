@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.adapter;
+package com.yangtze.flooring.wms.ui.notifications.adapter;
 
 import android.content.Context;
 
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.model.DataBean;
+import com.yangtze.flooring.wms.ui.notifications.adapter.BaseViewHolder;
 
 
 /**

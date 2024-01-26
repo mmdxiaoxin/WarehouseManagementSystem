@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.components.LockTablePlus;
+package com.yangtze.flooring.wms.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -13,12 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yangtze.flooring.wms.R;
+import com.yangtze.flooring.wms.model.Entity;
 
 import java.util.HashSet;
 import java.util.List;
 
 
-public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemViewHolder> {
+public class RecordsContentAdapter extends RecyclerView.Adapter<RecordsContentAdapter.ItemViewHolder> {
 
     private final Context context;
     private List<Entity> data;
@@ -26,7 +27,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
     private int firstPos = -1;
     private int firstOffset = -1;
 
-    public ContentAdapter(Context context, RecyclerView headRecycler) {
+    public RecordsContentAdapter(Context context, RecyclerView headRecycler) {
         this.context = context;
         //设置头部recycle
         initRecyclerView(headRecycler);
@@ -54,9 +55,9 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         itemViewHolder.rvItemRight.setLayoutManager(linearLayoutManager);
         itemViewHolder.rvItemRight.setHasFixedSize(true);
-        RightScrollAdapter rightScrollAdapter = new RightScrollAdapter(context);
-        rightScrollAdapter.setDatas(data.get(i).getRightDatas());
-        itemViewHolder.rvItemRight.setAdapter(rightScrollAdapter);
+        RecordsRightScrollAdapter recordsRightScrollAdapter = new RecordsRightScrollAdapter(context);
+        recordsRightScrollAdapter.setDatas(data.get(i).getRightDatas());
+        itemViewHolder.rvItemRight.setAdapter(recordsRightScrollAdapter);
 
         //设置多条recyclerview联动
         initRecyclerView(itemViewHolder.rvItemRight);

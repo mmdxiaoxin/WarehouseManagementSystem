@@ -17,9 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.yangtze.flooring.wms.R;
-import com.yangtze.flooring.wms.components.LockTablePlus.ContentAdapter;
-import com.yangtze.flooring.wms.components.LockTablePlus.Entity;
-import com.yangtze.flooring.wms.components.LockTablePlus.TopTabAdapter;
+import com.yangtze.flooring.wms.adapter.RecordsContentAdapter;
+import com.yangtze.flooring.wms.model.Entity;
+import com.yangtze.flooring.wms.adapter.RecordsTopTabAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class DepositFragment extends Fragment {
     private final List<String> rightMoveDatas = new ArrayList<>();
     private final List<String> topTabs = new ArrayList<>();
 
-    private ContentAdapter contentAdapter;
+    private RecordsContentAdapter recordsContentAdapter;
     private boolean isLoading = false;
 
     @SuppressLint("MissingInflatedId")
@@ -56,18 +56,18 @@ public class DepositFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvTabRight.setLayoutManager(linearLayoutManager);
-        TopTabAdapter topTabAdapter = new TopTabAdapter(requireContext());
-        rvTabRight.setAdapter(topTabAdapter);
+        RecordsTopTabAdapter recordsTopTabAdapter = new RecordsTopTabAdapter(requireContext());
+        rvTabRight.setAdapter(recordsTopTabAdapter);
         for (int i = 0; i < 50; i++) {
             topTabs.add("类型" + i);
         }
-        topTabAdapter.setDatas(topTabs);
+        recordsTopTabAdapter.setDatas(topTabs);
 
         //处理内容部分
         recyclerContent.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerContent.setHasFixedSize(true);
-        contentAdapter = new ContentAdapter(requireContext(),rvTabRight);
-        recyclerContent.setAdapter(contentAdapter);
+        recordsContentAdapter = new RecordsContentAdapter(requireContext(),rvTabRight);
+        recyclerContent.setAdapter(recordsContentAdapter);
 
         recyclerContent.postDelayed(new Runnable() {
             @Override
@@ -82,7 +82,7 @@ public class DepositFragment extends Fragment {
                     entity.setRightDatas(rightMoveDatas);
                     mEntities.add(entity);
                 }
-                contentAdapter.setData(mEntities);
+                recordsContentAdapter.setData(mEntities);
                 Toast.makeText(requireContext(), "加载完毕,加载了30条数据", Toast.LENGTH_SHORT).show();
             }
         }, 1500);
@@ -104,7 +104,7 @@ public class DepositFragment extends Fragment {
                             entity.setRightDatas(rightMoveDatas);
                             mEntities.add(entity);
                         }
-                        contentAdapter.setData(mEntities);
+                        recordsContentAdapter.setData(mEntities);
                         swipeRefresh.setRefreshing(false);
                         Toast.makeText(requireContext(), "刷新完毕,刷新了50条数据", Toast.LENGTH_SHORT).show();
                     }
@@ -159,7 +159,7 @@ public class DepositFragment extends Fragment {
                             hideLoadingIndicator();
 
                             // 更新适配器
-                            contentAdapter.setData(mEntities);
+                            recordsContentAdapter.setData(mEntities);
 
                             // 设置isLoading为false，表示加载完成
                             isLoading = false;

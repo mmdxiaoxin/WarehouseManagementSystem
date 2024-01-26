@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.components.LockTablePlus;
+package com.yangtze.flooring.wms.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,12 +17,12 @@ import java.util.List;
 /**
  * 头部列表
  */
-public class TopTabAdapter extends RecyclerView.Adapter<TopTabAdapter.TabViewHolder> {
+public class RecordsTopTabAdapter extends RecyclerView.Adapter<RecordsTopTabAdapter.TabViewHolder> {
 
     private Context context;
     private List<String> datas;
 
-    public TopTabAdapter(Context context) {
+    public RecordsTopTabAdapter(Context context) {
         this.context = context;
     }
 

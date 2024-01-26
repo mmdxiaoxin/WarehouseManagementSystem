@@ -1,4 +1,4 @@
-package com.yangtze.flooring.wms.components.LockTablePlus;
+package com.yangtze.flooring.wms.model;
 
 import java.util.ArrayList;
 import java.util.List;
