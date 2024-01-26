@@ -19,7 +19,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.yangtze.flooring.wms.R;
 import com.yangtze.flooring.wms.components.LockTablePlus.ContentAdapter;
 import com.yangtze.flooring.wms.components.LockTablePlus.Entity;
-import com.yangtze.flooring.wms.components.LockTablePlus.TopTabAdpater;
+import com.yangtze.flooring.wms.components.LockTablePlus.TopTabAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +33,9 @@ public class DepositFragment extends Fragment {
     private LinearLayout llTopRoot;
     private RecyclerView recyclerContent;
     private SwipeRefreshLayout swipeRefresh;
-    private List<Entity> mEntities = new ArrayList<>();
-    private List<String> rightMoveDatas = new ArrayList<>();
-    private List<String> topTabs = new ArrayList<>();
+    private final List<Entity> mEntities = new ArrayList<>();
+    private final List<String> rightMoveDatas = new ArrayList<>();
+    private final List<String> topTabs = new ArrayList<>();
 
     private ContentAdapter contentAdapter;
     private boolean isLoading = false;
@@ -56,12 +56,13 @@ public class DepositFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rvTabRight.setLayoutManager(linearLayoutManager);
-        TopTabAdpater topTabAdpater = new TopTabAdpater(requireContext());
-        rvTabRight.setAdapter(topTabAdpater);
+        TopTabAdapter topTabAdapter = new TopTabAdapter(requireContext());
+        rvTabRight.setAdapter(topTabAdapter);
         for (int i = 0; i < 50; i++) {
             topTabs.add("类型" + i);
         }
-        topTabAdpater.setDatas(topTabs);
+        topTabAdapter.setDatas(topTabs);
+
         //处理内容部分
         recyclerContent.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerContent.setHasFixedSize(true);
@@ -158,7 +159,7 @@ public class DepositFragment extends Fragment {
                             hideLoadingIndicator();
 
                             // 更新适配器
-                            contentAdapter.notifyDataSetChanged();
+                            contentAdapter.setData(mEntities);
 
                             // 设置isLoading为false，表示加载完成
                             isLoading = false;

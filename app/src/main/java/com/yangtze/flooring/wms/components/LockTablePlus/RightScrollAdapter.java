@@ -51,7 +51,7 @@ public class RightScrollAdapter extends RecyclerView.Adapter<RightScrollAdapter.
         return null == rightDatas ? 0 : rightDatas.size();
     }
 
-    class ScrollViewHolder extends RecyclerView.ViewHolder {
+    static class ScrollViewHolder extends RecyclerView.ViewHolder {
 
         TextView mTvScrollItem;
 

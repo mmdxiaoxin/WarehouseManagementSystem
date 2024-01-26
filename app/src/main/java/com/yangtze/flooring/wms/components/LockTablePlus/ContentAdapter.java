@@ -20,9 +20,9 @@ import java.util.List;
 
 public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemViewHolder> {
 
-    private Context context;
+    private final Context context;
     private List<Entity> data;
-    private HashSet<RecyclerView> observerList = new HashSet<>();
+    private final HashSet<RecyclerView> observerList = new HashSet<>();
     private int firstPos = -1;
     private int firstOffset = -1;
 
@@ -32,6 +32,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
         initRecyclerView(headRecycler);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setData(List<Entity> data) {
         this.data = data;
         notifyDataSetChanged();
@@ -84,7 +85,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
         //为每一个recyclerview创建layoutManager
         LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
         //todo
-        // 通过移动layoutManager来实现列表滑动  此行是让新加载的item条目保持跟已经滑动的recycleview位置保持一致
+        // 通过移动layoutManager来实现列表滑动  此行是让新加载的item条目保持跟已经滑动的recyclerview位置保持一致
         // 也就是上拉加载更多的时候  保证新加载出来的item 跟已经滑动的item位置保持一致
         if (layoutManager != null && firstPos > 0 && firstOffset > 0) {
             layoutManager.scrollToPositionWithOffset(firstPos + 1, firstOffset);
@@ -105,10 +106,10 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
                 return false;
             }
         });
-        //添加当前滑动recycleview的滑动监听
+        //添加当前滑动recyclerview的滑动监听
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
                 //获取显示第一个item的位置
@@ -133,7 +134,7 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ItemView
             }
 
             @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
             }
         });

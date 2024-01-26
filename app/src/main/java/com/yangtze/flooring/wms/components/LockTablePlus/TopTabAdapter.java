@@ -1,5 +1,6 @@
 package com.yangtze.flooring.wms.components.LockTablePlus;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,15 +17,16 @@ import java.util.List;
 /**
  * 头部列表
  */
-public class TopTabAdpater extends RecyclerView.Adapter<TopTabAdpater.TabViewHolder> {
+public class TopTabAdapter extends RecyclerView.Adapter<TopTabAdapter.TabViewHolder> {
 
     private Context context;
     private List<String> datas;
 
-    public TopTabAdpater(Context context) {
+    public TopTabAdapter(Context context) {
         this.context = context;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setDatas(List<String> datas) {
         this.datas = datas;
         notifyDataSetChanged();
@@ -47,7 +49,7 @@ public class TopTabAdpater extends RecyclerView.Adapter<TopTabAdpater.TabViewHol
         return null == datas ? 0 : datas.size();
     }
 
-    class TabViewHolder extends RecyclerView.ViewHolder {
+    static class TabViewHolder extends RecyclerView.ViewHolder {
 
         TextView mTabTv;
 
