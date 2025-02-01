@@ -1,8 +1,6 @@
 ## WarehouseManagementSystem
 
-新项目迁移到：
-
-[仓库管理程序]: https://github.com/mmdxiaoxin/ProcureSellManage
+新项目迁移到：[mmdxiaoxin/ProcureSellManage](https://github.com/mmdxiaoxin/ProcureSellManage)
 
 “扬子地板仓库管理系统”是一款专为地板仓库管理而设计的Android应用程序。该软件旨在帮助地板企业或仓库管理者轻松有效地管理他们的库存、订单和其他相关事务。以下是该软件可能提供的功能和特点：
 
